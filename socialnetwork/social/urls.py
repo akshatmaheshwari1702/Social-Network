@@ -6,6 +6,7 @@ from .views import (
     PostDetailView,
     PostEditView,
     PostDeleteView,
+    ProfileView,
 )
 
 urlpatterns = [
@@ -17,5 +18,10 @@ urlpatterns = [
         "post/<int:post_pk>/comment/delete/<int:pk>/",
         CommentDeleteView.as_view(),
         name="comment-delete",
+    ),
+    path(
+        "profile/<int:pk>",
+        ProfileView.as_view(),
+        name="profile",
     ),
 ]
